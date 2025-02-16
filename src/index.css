@@ -19,7 +19,6 @@
 .customBG{
   background: url('./assets/AdobeStock_839646303_Preview.jpeg') no-repeat center center fixed;
   background-size: cover; 
-  padding: 20px;
 }
 
 .oswald-400 {
@@ -40,4 +39,9 @@
   font-weight: 600;
   font-style: normal;
 }
-
+.rotate90{
+  rotate: -90deg;
+}
+.rotate0{
+  rotate: 0deg !important;
+}

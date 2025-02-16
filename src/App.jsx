@@ -1,14 +1,16 @@
-import Guitar from './assets/gutr.png'
-import Drums from './assets/Drums.png'
+import Guitar from './assets/2.png'
+import Drums from './assets/9.png'
 import { easeInOut } from 'framer-motion'
 import { motion } from 'framer-motion'
 import chorus from './assets/CHORUS.png'
+import PersonHead from './assets/3.png'
+import CD from './assets/11.png'
 
 export default function App() {
   return (
-    <div className='customBG w-[100vw] relative overflow-x-hidden'>
+    <div className='customBG w-[100vw] relative overflow-x-hidden  p-[10px] md:p-[20px]'>
       <div className="mx-auto  bg-yellow-50 rounded-lg m-auto shadow-md shadow-gray-950 ">
-        <img src={Guitar} alt="" className='absolute top-[-120px] md:top-[-150px] right-[-50px] md:right-0 w-[400px] md:w-[400px] lg:w-[500px]' />
+        <img src={Guitar} alt="" className='absolute top-[-160px] rotate-[16deg] md:rotate-0 md:top-[-180px] right-[-50px] md:right-0 w-[400px] md:w-[400px] lg:w-[500px]' />
         <div className='flex flex-col mx-auto justify-center items-center h-[90vh]'>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
@@ -36,16 +38,48 @@ export default function App() {
 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: easeInOut, delay: 0.4 }}
+            transition={{ duration: 0.5, ease: easeInOut, delay: 0.5 }}
 
 
-            className='SpaceG w-[90%] md:w-[60%] pt-4 text-[14px] md:text-[18px] text-center'>The energy of a live concert. The thrill of the crowd. The beats that stay with you long after the show ends. <b>CHORUS</b> is bringing that experience to life with exclusive artist-inspired merchandise that lets you carry the magic of music everywhere you go.
+            className='SpaceG w-[90%] md:w-[55%] pt-4 text-[14px] md:text-[18px] text-center'>The energy of a live concert. The thrill of the crowd. The beats that stay with you long after the show ends. <b>CHORUS</b> is bringing that experience to life with exclusive artist-inspired merchandise that
+            lets you carry the magic of music everywhere you go.
           </motion.p>
         </div>
 
         <div className='flex flex-col mx-auto justify-center items-center h-[100vh]'>
-          <img src={Drums} alt="" className='absolute top-[10%] left-[-170px] w-[500px] invisible md:visible' />
-          <img src={chorus} alt="" className=' md:w-[80%] md:rotate-0  -rotate-90 min-w-[800px]' />
+          <img src={Drums} alt="" className='absolute top-[10%] left-[-190px] w-[500px] invisible md:visible' />
+
+          <motion.img
+
+            initial={{ rotate: -180, opacity: 1, y: 0 }}
+            whileInView={{ rotate: 180, opacity: 1, y: 0 }}
+            transition={{ duration: 8, delay: 0, repeat: Infinity }}
+
+            src={CD} alt="" className='absolute top-[40%] left-[-250px] w-[500px] invisible md:visible' />
+
+          <div className='absolute top-[26%] md:top-[26%] right-[170px] w-[300px] rotate-12 hover:scale-105
+          transition-all duration-500 ease-in-out z-50'>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="bg-black bg-opacity-45 w-[83%] left-6 top-[-10px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center"
+            >
+              <p className="text-6xl text-white font-bravado">POSTERS</p>
+            </motion.div>
+            <img src={PersonHead} alt="" className='max-w-[200px] md:min-w-[98%]'/>
+
+
+          </div>
+
+            <motion.img
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
+            src={chorus} alt=""
+            className="md:w-[80%] w-full md:!rotate-0 !-rotate-90 min-w-[600px]"
+          />
+
         </div >
 
         <div className='h-[100vh]'>
