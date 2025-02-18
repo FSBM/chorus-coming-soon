@@ -8,7 +8,16 @@ import CD from "./assets/11.png";
 import PostCard from "./assets/12.png";
 import Tv from "./assets/Tv.png";
 import Glitch from "./assets/glitch.gif";
-import { useState } from "react";
+import { useState } from "react";import PlayButton from './assets/PlayBtn2.png'
+import { BsFillPlayCircleFill } from "react-icons/bs";
+import { IoPlayBackSharp } from "react-icons/io5";
+import { IoPlayForwardSharp } from "react-icons/io5";
+import { TiArrowLoop } from "react-icons/ti";
+import { IoShuffle } from "react-icons/io5";
+import { useState, useRef } from "react";
+import { MdPauseCircleFilled } from "react-icons/md";
+import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
+
 
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
@@ -48,9 +57,20 @@ export default function App() {
     }
   };
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(new Audio(songFile));
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
   return (
     <div className="customBG w-[100vw] relative overflow-x-hidden  p-[10px] md:p-[20px]">
-      <div className="mx-auto  bg-yellow-50 rounded-lg m-auto shadow-md shadow-gray-950 ">
+      <div className="mx-auto  bg-yellow-50 rounded-lg m-auto shadow-md shadow-gray-950 pb-3">
         <img
           src={Guitar}
           alt=""
@@ -100,7 +120,7 @@ export default function App() {
           <img
             src={Tshirt}
             alt=""
-            className="absolute top-[0%] left-[-200px] w-[430px] invisible md:visible -rotate-[29deg]"
+            className="absolute top-[0%] left-[-180px] w-[430px] invisible md:visible -rotate-[13deg]"
           />
 
           <motion.img
@@ -177,8 +197,8 @@ export default function App() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
-          className="font-bravado text-[80px] md:text-[100px] lg:text-[120px] text-[#9e0101] text-center "
-        >
+
+          className='font-bravado text-[50px] md:text-[90px] lg:text-[120px] text-[#9e0101] text-center '>
           JOIN THE WAITLIST !
         </motion.h1>
         <div className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
@@ -263,11 +283,10 @@ export default function App() {
           <img src={Tv} alt="" className="w-[60%] z-20 mx-auto" />
         </div>
         {/* Since LG */}
-        <div className="flex mx-auto justify-center  -mt-10 min-h-[50vh] visible  min-w-[600px] xl:hidden lg:!max-h-[0px]">
-          <form
-            className=" p-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0
-          !bg-[url('./assets/Form-Bg.jpeg')"
-          >
+        <div className='flex  flex-col mx-auto rounded-lg justify-center w-[350px]  md:-mt-10 min-h-[55vh] visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG '>
+          <form className=" px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0
+        ">
+
             <div>
               <label className="block text-sm font-medium mb-1">Name</label>
               <input
@@ -291,7 +310,7 @@ export default function App() {
                 your favrioute artist and their songs ?
               </label>
               <textarea
-                className="w-full px-3 py-2'' border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-24 border p-2"
+                className="w-full px-3 py-2 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-24 border p-2"
                 placeholder="Enter your message"
               ></textarea>
             </div>
@@ -307,7 +326,7 @@ export default function App() {
             <button class="group relative inline-block font-Milker text-lg self-center  w-full">
               <span class="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
                 <span class="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
-                <span class="ease absolute left-0 -ml-8 h-[200%] w-[110%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
+                <span class="ease absolute left-0 -ml-8 h-[200%] w-[120%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
                 <span class="relative">Submit</span>
               </span>
               <span
@@ -316,6 +335,17 @@ export default function App() {
               ></span>
             </button>
           </form>
+          <div className="flex w-full justify-center items-center m-auto gap-3 mt-5 mb-4 min-h-[60px]">
+            <IoShuffle size={32} className="mr-4" />
+            <IoPlayBackSharp size={36} />
+            {isPlaying ? (
+              <MdPauseCircleFilled size={40} onClick={togglePlay} className="cursor-pointer" />
+            ) : (
+              <BsFillPlayCircleFill size={36} onClick={togglePlay} className="cursor-pointer" />
+            )}
+            <IoPlayForwardSharp size={36} />
+            <TiArrowLoop size={32} className="ml-4" />
+          </div>
         </div>
       </div>
     </div>
