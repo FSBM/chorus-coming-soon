@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/milk');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,14 +11,20 @@
   src: url('./assets/fonts/Bravado.ttf');
 
 }
+@font-face {
+  font-family: 'Milker';
+  src: url('./assets/milker/Milker.otf');
+}
 .SpaceG{
   font-family: 'Space Grotesk', sans-serif;
 }
 
 
 
+
+
 .customBG{
-  background: url('./assets/AdobeStock_839646303_Preview.jpeg') no-repeat center center fixed;
+  background: url('./assets/BG_9.jpg') no-repeat center center fixed ;
   background-size: cover; 
 }
 
@@ -45,3 +52,36 @@
 .rotate0{
   rotate: 0deg !important;
 }
+.milk{
+  font-family: 'Milk', sans-serif;                                            
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0) }
+  10% { transform: translate(-5%, -5%) }
+  20% { transform: translate(-10%, 5%) }
+  30% { transform: translate(5%, -10%) }
+  40% { transform: translate(-5%, 15%) }
+  50% { transform: translate(-10%, 5%) }
+  60% { transform: translate(15%, 0) }
+  70% { transform: translate(0, 10%) }
+  80% { transform: translate(-15%, 0) }
+  90% { transform: translate(10%, 5%) }
+}
+.noise-container {
+
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZmlsdGVyIGlkPSJmbDQiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHg9IjB5PSIwIj48ZmV0dXJsZW5jZSBpZD0iZXR1cmJsbmMiIHxzdmcvPg08L3Zzdj4=");
+
+  background-repeat: repeat;
+
+}
+input{
+  color: black !important;
+  background-color: #fefce8 !important;
+}
+textarea{
+  background-color: #fefce8 !important;
+  color: black !important;
+}
+
+

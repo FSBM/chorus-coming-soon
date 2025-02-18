@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        bravado: ['Bravado']
+        bravado: ['Bravado'],
+        Milker: ['Milker'],
       }
     },
   },
