@@ -83,5 +83,9 @@ textarea{
   background-color: #fefce8 !important;
   color: black !important;
 }
-
+.formBG{
+    background-color: rgb(60 178 216) !important;
+    background-repeat: no-repeat  !important;
+    background-size: cover !important;
+}
 
