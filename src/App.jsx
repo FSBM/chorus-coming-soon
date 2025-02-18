@@ -71,7 +71,7 @@ export default function App() {
         </div>
 
         <div className='flex flex-col mx-auto justify-center items-center h-[70vh] md:h-[100vh]'>
-          <img src={Tshirt} alt="" className='absolute top-[0%] left-[-200px] w-[430px] invisible md:visible -rotate-[29deg]' />
+          <img src={Tshirt} alt="" className='absolute top-[0%] left-[-180px] w-[430px] invisible md:visible -rotate-[13deg]' />
 
           <motion.img
 
@@ -146,7 +146,7 @@ export default function App() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
 
-          className='font-bravado text-[50px] md:text-[100px] lg:text-[120px] text-[#9e0101] text-center '>
+          className='font-bravado text-[50px] md:text-[90px] lg:text-[120px] text-[#9e0101] text-center '>
           JOIN THE WAITLIST !
         </motion.h1>
         <div className='relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible'>
