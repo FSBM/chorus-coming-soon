@@ -18,6 +18,7 @@ import { IoShuffle } from "react-icons/io5";
 import { useRef } from "react";
 import { MdPauseCircleFilled } from "react-icons/md";
 import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
+import Cards from "./components/Cards";
 
 
 export default function App() {
@@ -117,7 +118,7 @@ export default function App() {
           </motion.p>
         </div>
 
-        <div className="flex flex-col mx-auto justify-center items-center h-[70vh] md:h-[100vh]">
+        <div className="flex-col mx-auto justify-center items-center h-[70vh] md:h-[100vh] hidden md:flex">
           <img
             src={Tshirt}
             alt=""
@@ -135,7 +136,7 @@ export default function App() {
 
           {/* poster */}
           <div
-            className="absolute top-[40%] md:top-[22%] right-[180px] w-[300px] rotate-12 hover:scale-105
+            className="absolute top-[40%] hidden md:block md:top-[22%] right-[180px] w-[300px] rotate-12 hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
@@ -155,7 +156,7 @@ export default function App() {
 
           {/* PostCrd */}
           <div
-            className="absolute top-[24%]  md:top-[25%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
+            className="absolute top-[24%] hidden md:block md:top-[25%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
@@ -179,9 +180,23 @@ export default function App() {
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
             src={chorus}
             alt=""
-            className="md:w-[80%] w-full md:!rotate-0 !-rotate-90 min-w-[600px]"
+            className="md:w-[80%] w-full md:!rotate-0 !-rotate-90 min-w-[600px] hidden md:block"
           />
         </div>
+
+        <div className="h-[50vh] md:hidden  md:!h-0">
+        <Cards/>
+        </div>
+        
+
+
+
+
+       
+
+
+
+
 
         <div className="h-[80vh]">
           <iframe
@@ -199,7 +214,7 @@ export default function App() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
 
-          className='font-bravado text-[50px] md:text-[90px] lg:text-[120px] text-[#9e0101] text-center '>
+          className='font-bravado text-[40px] md:text-[70px] lg:text-[120px] text-[#9e0101] text-center '>
           JOIN THE WAITLIST !
         </motion.h1>
         <div className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
@@ -285,58 +300,58 @@ export default function App() {
           <img src={Tv} alt="" className="w-[60%] z-20 mx-auto" />
         </div>
         {/* Since LG */}
-        <div className={`flex  flex-col mx-auto rounded-lg justify-center w-[95%]  md:-mt-10 ${submitted?"":"min-h-[55vh]"} visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG`}>
-        {submitted ? (
+        <div className={`flex  flex-col mx-auto rounded-lg justify-center w-[95%]  md:-mt-10 ${submitted ? "" : "min-h-[55vh]"} visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG`}>
+          {submitted ? (
             <div className="px-6 pt-6 space-y-5 text-white  flex justify-center items-center  z-40 font-Milker opacity-100  noise-container xl:max-h-0">
               ✅ Your response has been recorded. Thank you!
             </div>
           ) : (
-          <form 
-          onSubmit={handleSubmit}
-          className=" px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0
+            <form
+              onSubmit={handleSubmit}
+              className=" px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0
         ">
 
-            <div>
-              <label className="block text-sm font-medium mb-1">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3 py-2'' border-gray-600 rounded-md !focus:outline-none  focus:ring-2 focus:ring-blue-500 text-sm border p-2"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-3 py-2'' border-gray-600 rounded-md !focus:outline-none  focus:ring-2 focus:ring-blue-500 text-sm border p-2"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-1">Email</label>
-              <input
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-3 py-2'' border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm border p-2"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-3 py-2'' border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm border p-2"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                your favrioute artist and their songs ?
-              </label>
-              <textarea
-                name="artist"
-                value={formData.artist}
-                onChange={(e) => setFormData({ ...formData, artist: e.target.value })}
-                className="w-full px-3 py-2 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-24 border p-2"
-                placeholder="Enter your message"
-                required
-              ></textarea>
-            </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  your favrioute artist and their songs ?
+                </label>
+                <textarea
+                  name="artist"
+                  value={formData.artist}
+                  onChange={(e) => setFormData({ ...formData, artist: e.target.value })}
+                  className="w-full px-3 py-2 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-24 border p-2"
+                  placeholder="Enter your message"
+                  required
+                ></textarea>
+              </div>
 
-            {/* <button
+              {/* <button
               type="submit"
               className="w-full py-2 px-4 bg-black rounded-md transition-colors text-sm font-medium text-white
               
@@ -344,18 +359,18 @@ export default function App() {
             >
               Submit
             </button> */}
-            <button className="group relative inline-block font-Milker text-lg self-center  w-full">
-              <span className="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
-                <span className="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
-                <span className="ease absolute left-0 -ml-8 h-[200%] w-[120%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
-                <span className="relative">Submit</span>
-              </span>
-              <span
-                className="absolute bottom-0 right-0 -mb-1 -mr-1 h-[2.5rem] w-full rounded-lg bg-[#fefce8] transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0 group-hover:bg-transparent"
-                data-rounded="rounded-lg"
-              ></span>
-            </button>
-          </form>
+              <button className="group relative inline-block font-Milker text-lg self-center  w-full">
+                <span className="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
+                  <span className="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
+                  <span className="ease absolute left-0 -ml-8 h-[200%] w-[120%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
+                  <span className="relative">Submit</span>
+                </span>
+                <span
+                  className="absolute bottom-0 right-0 -mb-1 -mr-1 h-[2.5rem] w-full rounded-lg bg-[#fefce8] transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0 group-hover:bg-transparent"
+                  data-rounded="rounded-lg"
+                ></span>
+              </button>
+            </form>
           )}
           <div className="flex w-full justify-center items-center m-auto gap-3 mt-5 mb-4 min-h-[60px] self-end">
             <IoShuffle size={32} className="mr-4" />
