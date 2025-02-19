@@ -211,8 +211,9 @@ export default function App() {
           />
 
           {submitted ? (
-            <div className="p-6 space-y-5 text-white absolute lg:top-[4%] xl:top-[15%] left-[44%] translate-x-[-50%] translate-y-[-50% w-[40%] z-40 font-Milker opacity-80  noise-container">
-              ✅ Your response has been recorded. Thank you!
+            <div className="p-6 space-y-5 text-white absolute flex justify-center items-center h-[390px] lg:top-[4%] xl:top-[15%] left-[44%] translate-x-[-50%] w-[40%] z-40 font-Milker opacity-70 text-2xl noise-container text-center">
+              Your response has been recorded.
+              <br /> Thank you!
             </div>
           ) : (
             <form
@@ -284,9 +285,9 @@ export default function App() {
           <img src={Tv} alt="" className="w-[60%] z-20 mx-auto" />
         </div>
         {/* Since LG */}
-        <div className='flex  flex-col mx-auto rounded-lg justify-center w-[350px]  md:-mt-10 min-h-[55vh] visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG '>
+        <div className={`flex  flex-col mx-auto rounded-lg justify-center w-[95%]  md:-mt-10 ${submitted?"":"min-h-[55vh]"} visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG`}>
         {submitted ? (
-            <div className="px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0">
+            <div className="px-6 pt-6 space-y-5 text-white  flex justify-center items-center  z-40 font-Milker opacity-100  noise-container xl:max-h-0">
               ✅ Your response has been recorded. Thank you!
             </div>
           ) : (
@@ -356,7 +357,7 @@ export default function App() {
             </button>
           </form>
           )}
-          <div className="flex w-full justify-center items-center m-auto gap-3 mt-5 mb-4 min-h-[60px]">
+          <div className="flex w-full justify-center items-center m-auto gap-3 mt-5 mb-4 min-h-[60px] self-end">
             <IoShuffle size={32} className="mr-4" />
             <IoPlayBackSharp size={36} />
             {isPlaying ? (
