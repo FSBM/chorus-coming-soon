@@ -8,13 +8,14 @@ import CD from "./assets/11.png";
 import PostCard from "./assets/12.png";
 import Tv from "./assets/Tv.png";
 import Glitch from "./assets/glitch.gif";
-import { useState } from "react";import PlayButton from './assets/PlayBtn2.png'
+import { useState } from "react";
+import PlayButton from './assets/PlayBtn2.png'
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { IoPlayBackSharp } from "react-icons/io5";
 import { IoPlayForwardSharp } from "react-icons/io5";
 import { TiArrowLoop } from "react-icons/ti";
 import { IoShuffle } from "react-icons/io5";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { MdPauseCircleFilled } from "react-icons/md";
 import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
 
@@ -267,14 +268,14 @@ export default function App() {
             >
               Submit
             </button> */}
-              <button class="group relative inline-block font-Milker text-lg self-center  w-full">
-                <span class="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
-                  <span class="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
-                  <span class="ease absolute left-0 -ml-8 h-[200%] w-[110%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
-                  <span class="relative">Submit</span>
+              <button className="group relative inline-block font-Milker text-lg self-center  w-full">
+                <span className="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
+                  <span className="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
+                  <span className="ease absolute left-0 -ml-8 h-[200%] w-[110%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
+                  <span className="relative">Submit</span>
                 </span>
                 <span
-                  class="absolute bottom-0 right-0 -mb-1 -mr-1 h-[2.5rem] w-full rounded-lg bg-[#fefce8] transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0 group-hover:bg-transparent"
+                  className="absolute bottom-0 right-0 -mb-1 -mr-1 h-[2.5rem] w-full rounded-lg bg-[#fefce8] transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0 group-hover:bg-transparent"
                   data-rounded="rounded-lg"
                 ></span>
               </button>
@@ -284,24 +285,39 @@ export default function App() {
         </div>
         {/* Since LG */}
         <div className='flex  flex-col mx-auto rounded-lg justify-center w-[350px]  md:-mt-10 min-h-[55vh] visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG '>
-          <form className=" px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0
+        {submitted ? (
+            <div className="px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0">
+              ✅ Your response has been recorded. Thank you!
+            </div>
+          ) : (
+          <form 
+          onSubmit={handleSubmit}
+          className=" px-6 pt-6 space-y-5 text-white  z-40 font-Milker opacity-100  noise-container xl:max-h-0
         ">
 
             <div>
               <label className="block text-sm font-medium mb-1">Name</label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-3 py-2'' border-gray-600 rounded-md !focus:outline-none  focus:ring-2 focus:ring-blue-500 text-sm border p-2"
                 placeholder="Enter your name"
+                required
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-1">Email</label>
               <input
+                name="email"
                 type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-3 py-2'' border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm border p-2"
                 placeholder="Enter your email"
+                required
               />
             </div>
 
@@ -310,8 +326,12 @@ export default function App() {
                 your favrioute artist and their songs ?
               </label>
               <textarea
+                name="artist"
+                value={formData.artist}
+                onChange={(e) => setFormData({ ...formData, artist: e.target.value })}
                 className="w-full px-3 py-2 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-24 border p-2"
                 placeholder="Enter your message"
+                required
               ></textarea>
             </div>
 
@@ -323,18 +343,19 @@ export default function App() {
             >
               Submit
             </button> */}
-            <button class="group relative inline-block font-Milker text-lg self-center  w-full">
-              <span class="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
-                <span class="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
-                <span class="ease absolute left-0 -ml-8 h-[200%] w-[120%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
-                <span class="relative">Submit</span>
+            <button className="group relative inline-block font-Milker text-lg self-center  w-full">
+              <span className="relative z-10 block overflow-hidden rounded-lg  border-[#fefce8]px-5 py-2 font-medium leading-tight text-[#fefce8] transition-colors duration-300 ease-out group-hover:border-transparent group-hover:text-black">
+                <span className="absolute inset-0 h-full w-full rounded-lg bg-black px-5 py-2"></span>
+                <span className="ease absolute left-0 -ml-8 h-[200%] w-[120%] origin-top-right -translate-x-full translate-y-12 -rotate-90 bg-[#fefce8] transition-all duration-300 group-hover:-rotate-180"></span>
+                <span className="relative">Submit</span>
               </span>
               <span
-                class="absolute bottom-0 right-0 -mb-1 -mr-1 h-[2.5rem] w-full rounded-lg bg-[#fefce8] transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0 group-hover:bg-transparent"
+                className="absolute bottom-0 right-0 -mb-1 -mr-1 h-[2.5rem] w-full rounded-lg bg-[#fefce8] transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0 group-hover:bg-transparent"
                 data-rounded="rounded-lg"
               ></span>
             </button>
           </form>
+          )}
           <div className="flex w-full justify-center items-center m-auto gap-3 mt-5 mb-4 min-h-[60px]">
             <IoShuffle size={32} className="mr-4" />
             <IoPlayBackSharp size={36} />
