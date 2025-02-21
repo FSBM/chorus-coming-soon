@@ -3,7 +3,7 @@ import "./Cards.css";
 import '.././index.css'
 import PostCard from "../assets/12.png";
 import PersonHead from "../assets/3.png";
-import ToteBag from "../assets/toteBag.png";
+import ToteBag from "../assets/toteBag.webp";
 import Tshirt from "../assets/TShirtNon.png";
 
 const slideData = [
