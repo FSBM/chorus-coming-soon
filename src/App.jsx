@@ -39,7 +39,7 @@ export default function App() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const formDataToSend = new FormData();
     formDataToSend.append(GOOGLE_FIELDS.name, formData.name);
@@ -118,7 +118,7 @@ export default function App() {
           </motion.p>
         </div>
 
-        <div className="flex-col mx-auto justify-center items-center h-[70vh] md:h-[100vh] hidden md:flex">
+        <div className="flex-col mx-auto justify-center items-center min-h-[90vh] md:h-[100vh] hidden md:flex">
           <img
             src={Tshirt}
             alt=""
@@ -136,7 +136,7 @@ export default function App() {
 
           {/* poster */}
           <div
-            className="absolute top-[40%] hidden md:block md:top-[20%] right-[180px] w-[300px] rotate-12 hover:scale-105
+            className="absolute top-[40%] hidden md:block md:top-[22%] right-[180px] w-[300px] rotate-12 hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
@@ -154,27 +154,7 @@ export default function App() {
             />
           </div>
 
-          {/* Sticker */}
-          {/* <div
-            className="absolute top-[40%] hidden md:block md:top-[42%] right-[180px] w-[300px] rotate-12 hover:scale-105
-          transition-all duration-500 ease-in-out z-50"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className={`bg-black bg-opacity-45 w-full h-full absolute transition-all ease-in-out duration-100 flex justify-center items-center `}
-              onMouseEnter={() => setStickerHover(true)}
-              onMouseLeave={() => setStickerHover(false)}
-            >
-              <p className="text-6xl text-black font-bravado">STICKER</p>
-            </motion.div>
-            <img
-              src={Sticker}
-              alt=""
-              className={`max-w-[200px] md:min-w-[98%] ${StickerHover ? "opacity-40" : "opacity-100"}`}
-            />
-          </div> */}
+          
 
           {/* Sticker */}
           <div
@@ -199,7 +179,7 @@ export default function App() {
 
           {/* PostCrd */}
           <div
-            className="absolute top-[22%] hidden md:block md:top-[23%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
+            className="absolute top-[22%] hidden md:block md:top-[24%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
@@ -216,7 +196,7 @@ export default function App() {
               className="max-w-[200px] md:min-w-[100%]"
             />
           </div>
-
+            {/* Chorus */}
           <motion.img
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +208,7 @@ export default function App() {
         </div>
 
 
-        
+
         <div className="h-[50vh] md:hidden  md:!h-0 space-y-4">
           <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
             Our Products
