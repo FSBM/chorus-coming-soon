@@ -19,6 +19,7 @@ import { MdPauseCircleFilled } from "react-icons/md";
 import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
 import Cards from "./components/Cards";
 import Sticker from "./assets/Sticker.png";
+import useWindowSize from './components/useWindowSize';
 
 
 export default function App() {
@@ -28,6 +29,8 @@ export default function App() {
     email: "",
     artist: "",
   });
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
 
   const GOOGLE_FORM_ACTION_URL =
     "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQ02d-dyJxdCo1wU44faOPAMrLq3af92XTX1NxdeBfXNoRXg/formResponse";
@@ -154,7 +157,7 @@ export default function App() {
             />
           </div>
 
-          
+
 
           {/* Sticker */}
           <div
@@ -196,7 +199,7 @@ export default function App() {
               className="max-w-[200px] md:min-w-[100%]"
             />
           </div>
-            {/* Chorus */}
+          {/* Chorus */}
           <motion.img
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,12 +229,12 @@ export default function App() {
 
 
 
-        <div className="h-[75vh] md:h-[90vh] flex flex col justify-center items-center">
+        <div className="h-[75vh] md:h-[90vh] flex col justify-center items-center">
           <iframe
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
             width="90%"
-            height="500"
+            height={isMobile ? "500" : "590"}
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             className="mx-auto"
