@@ -76,7 +76,7 @@ export default function App() {
         <img
           src={Guitar}
           alt=""
-          className="absolute top-[-200px] rotate-[16deg] md:rotate-0 md:top-[-180px] right-[-50px] md:right-0 w-[400px] md:w-[400px] lg:w-[500px]"
+          className="absolute  top-[-150px] rotate-[16deg] md:rotate-0 md:top-[-180px] right-[-50px] md:right-0 w-[300px] md:w-[400px] lg:w-[500px]"
         />
         <div className="flex flex-col mx-auto justify-center items-center h-[70vh] md:h-[100vh]">
           <motion.p
