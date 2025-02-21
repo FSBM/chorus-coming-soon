@@ -226,12 +226,12 @@ export default function App() {
 
 
 
-        <div className="h-[100vh]">
+        <div className="h-[75vh] md:h-[90vh]">
           <iframe
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
             width="90%"
-            height="585"
+            height="500"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             className="mx-auto"
