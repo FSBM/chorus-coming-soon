@@ -118,7 +118,7 @@ export default function App() {
           </motion.p>
         </div>
 
-        <div className="flex-col mx-auto justify-center items-center min-h-[90vh] md:h-[100vh] hidden md:flex">
+        <div className="flex-col mx-auto justify-center items-center min-h-[140vh] md:h-[100vh] hidden md:flex">
           <img
             src={Tshirt}
             alt=""
@@ -136,7 +136,7 @@ export default function App() {
 
           {/* poster */}
           <div
-            className="absolute top-[40%] hidden md:block md:top-[22%] right-[180px] w-[300px] rotate-12 hover:scale-105
+            className="absolute top-[40%] hidden md:block md:top-[21%] right-[180px] w-[300px] rotate-12 hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
@@ -158,7 +158,7 @@ export default function App() {
 
           {/* Sticker */}
           <div
-            className="absolute top-[48%] hidden  md:top-[42%] right-[180px] w-[300px] rotate-12 hover:scale-105
+            className="absolute top-[48%] hidden  md:top-[41%] right-[180px] w-[300px] rotate-12 hover:scale-105
   transition-all duration-500 ease-in-out z-50 md:flex md:flex-col md:justify-center md:items-center"
           >
             <motion.div
@@ -179,7 +179,7 @@ export default function App() {
 
           {/* PostCrd */}
           <div
-            className="absolute top-[22%] hidden md:block md:top-[24%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
+            className="absolute top-[22%] hidden md:block md:top-[23%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
@@ -226,7 +226,7 @@ export default function App() {
 
 
 
-        <div className="h-[80vh]">
+        <div className="h-[100vh]">
           <iframe
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
