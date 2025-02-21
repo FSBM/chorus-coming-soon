@@ -111,7 +111,7 @@ body {
 
 .slider {
   --slide-size: 300px;
-  --slide-margin: 30px;
+  --slide-margin: 10px;
   
   height: var(--slide-size);
   margin: 0 auto;
@@ -121,7 +121,7 @@ body {
 
 .slider__wrapper {
   display: flex;
-  /* margin: 0 calc(var(--slide-margin) * -1); */
+  margin: 0 calc(var(--slide-margin) * -1);
   margin: 0 0px;
   position: absolute;
   transition: transform var(--base-duration) cubic-bezier(0.25, 1, 0.35, 1);
