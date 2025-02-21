@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Cards.css";
 import '.././index.css'
 import PostCard from "../assets/12.png";
 import PersonHead from "../assets/3.png";
 import ToteBag from "../assets/toteBag.webp";
 import Tshirt from "../assets/TShirtNon.png";
+import Stcker from '../assets/Sticker.png'
 
 const slideData = [
   {
@@ -31,11 +32,14 @@ const slideData = [
     button: "Get Focused",
     src: ToteBag,
   },
+  {
+    index: 4,
+    headline: "STICKERS",
+    button: "Get Focused",
+    src: Stcker,
+  }
 ];
 
-// =========================
-// Slide Component
-// =========================
 const Slide = ({ slide, current, handleSlideClick }) => {
   const slideRef = useRef(null);
 
@@ -72,7 +76,12 @@ const Slide = ({ slide, current, handleSlideClick }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="slide__image-wrapper !font-Milker flex justify-center items-center">
-        <img className="slide__image !font-bravado" alt={slide.headline} src={slide.src} onLoad={(e) => (e.target.style.opacity = 1)} />
+        <img 
+          className="slide__image !font-bravado" 
+          alt={slide.headline} 
+          src={slide.src} 
+          onLoad={(e) => (e.target.style.opacity = 1)} 
+        />
       </div>
       <article className="slide__content">
         <h2 className="slide__headline">{slide.headline}</h2>
@@ -81,35 +90,32 @@ const Slide = ({ slide, current, handleSlideClick }) => {
   );
 };
 
-// =========================
-// Slider Control Component
-// =========================
-const SliderControl = ({ type, title, handleClick}) => (
-  <button className={`btn btn--${type} focus:outline-none`} title={title} onClick={handleClick}>
-    <svg className={`icon ${type=="previous" ? "rotate-180" : "rotate-0"}`} viewBox="0 0 24 24">
-      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-    </svg>
-  </button>
-);
-
-// =========================
-// Cards Component (Slider)
-// =========================
-export default function Cards({ heading = "Example Slider", slides = slideData }) {
+export default function Cards({ heading = "Example Slider", slides = slideData, interval =1500 }) {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const handlePreviousClick = () => {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
+  useEffect(() => {
+    if (!isPaused) {
+      const timer = setInterval(() => {
+        setCurrent(prev => (prev === slides.length - 1 ? 0 : prev + 1));
+      }, interval);
 
-  const handleNextClick = () => {
-    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+      return () => clearInterval(timer);
+    }
+  }, [isPaused, slides.length, interval]);
 
   const handleSlideClick = (index) => {
     if (current !== index) {
       setCurrent(index);
     }
+  };
+
+  const handleMouseEnter = () => {
+    setIsPaused(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
   };
 
   const headingId = `slider-heading__${heading.replace(/\s+/g, "-").toLowerCase()}`;
@@ -118,17 +124,23 @@ export default function Cards({ heading = "Example Slider", slides = slideData }
   };
 
   return (
-    <div className="slider" aria-labelledby={headingId}>
+    <div 
+      className="slider" 
+      aria-labelledby={headingId}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <ul className="slider__wrapper" style={wrapperTransform}>
         <h3 id={headingId} className="visuallyhidden">{heading}</h3>
         {slides.map((slide) => (
-          <Slide key={slide.index} slide={slide} current={current} handleSlideClick={handleSlideClick} />
+          <Slide 
+            key={slide.index} 
+            slide={slide} 
+            current={current} 
+            handleSlideClick={handleSlideClick} 
+          />
         ))}
       </ul>
-      <div className="slider__controls">
-        <SliderControl type="previous" title="Go to previous slide" handleClick={handlePreviousClick} />
-        <SliderControl type="next" title="Go to next slide" handleClick={handleNextClick} />
-      </div>
     </div>
   );
 }

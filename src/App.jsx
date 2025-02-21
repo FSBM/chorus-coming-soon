@@ -18,6 +18,7 @@ import { useRef } from "react";
 import { MdPauseCircleFilled } from "react-icons/md";
 import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
 import Cards from "./components/Cards";
+import Sticker from "./assets/Sticker.png";
 
 
 export default function App() {
@@ -153,6 +154,49 @@ export default function App() {
             />
           </div>
 
+          {/* Sticker */}
+          {/* <div
+            className="absolute top-[40%] hidden md:block md:top-[42%] right-[180px] w-[300px] rotate-12 hover:scale-105
+          transition-all duration-500 ease-in-out z-50"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className={`bg-black bg-opacity-45 w-full h-full absolute transition-all ease-in-out duration-100 flex justify-center items-center `}
+              onMouseEnter={() => setStickerHover(true)}
+              onMouseLeave={() => setStickerHover(false)}
+            >
+              <p className="text-6xl text-black font-bravado">STICKER</p>
+            </motion.div>
+            <img
+              src={Sticker}
+              alt=""
+              className={`max-w-[200px] md:min-w-[98%] ${StickerHover ? "opacity-40" : "opacity-100"}`}
+            />
+          </div> */}
+
+          {/* Sticker */}
+          <div
+            className="absolute top-[40%] hidden  md:top-[40%] right-[180px] w-[300px] rotate-12 hover:scale-105
+  transition-all duration-500 ease-in-out z-50 md:flex md:flex-col md:justify-center md:items-center"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="bg-black bg-opacity-60 w-[90%] h-[90%] absolute flex justify-center items-center"
+            >
+              <p className="text-6xl text-white font-bravado">STICKER</p>
+            </motion.div>
+
+            <motion.img
+              src={Sticker}
+              alt="Sticker"
+              className="max-w-[200px] md:min-w-[98%]"
+            />
+          </div>
+
           {/* PostCrd */}
           <div
             className="absolute top-[24%] hidden md:block md:top-[25%] right-[-30px] md:left-[170px] w-[230px] -rotate-[20deg] hover:scale-105
@@ -162,7 +206,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="bg-black bg-opacity-45 w-[100%]  h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center"
+              className=" bg-opacity-45 w-[80%] left-6 top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center backdrop:blur-xl"
             >
               <p className="text-4xl text-white font-bravado">POST CARDS</p>
             </motion.div>
@@ -184,14 +228,14 @@ export default function App() {
         </div>
 
         <div className="h-[50vh] md:hidden  md:!h-0">
-        <Cards/>
+          <Cards />
         </div>
-        
 
 
 
 
-       
+
+
 
 
 
