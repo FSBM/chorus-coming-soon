@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  overflow-x: hidden;
+}
+
 
 @font-face {
   font-family: 'Bravado';
