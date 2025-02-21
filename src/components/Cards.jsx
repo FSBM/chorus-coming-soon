@@ -75,7 +75,7 @@ const Slide = ({ slide, current, handleSlideClick }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="slide__image-wrapper !font-Milker flex justify-center items-center">
+      <div className="slide__image-wrapper max-w-[300px] max-h-[300px] !font-Milker flex justify-center items-center">
         <img 
           className="slide__image !font-bravado" 
           alt={slide.headline} 

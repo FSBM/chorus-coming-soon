@@ -39,7 +39,7 @@ export default function App() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
 
     const formDataToSend = new FormData();
     formDataToSend.append(GOOGLE_FIELDS.name, formData.name);
@@ -178,7 +178,7 @@ export default function App() {
 
           {/* Sticker */}
           <div
-            className="absolute top-[40%] hidden  md:top-[40%] right-[180px] w-[300px] rotate-12 hover:scale-105
+            className="absolute top-[42%] hidden  md:top-[40%] right-[180px] w-[300px] rotate-12 hover:scale-105
   transition-all duration-500 ease-in-out z-50 md:flex md:flex-col md:justify-center md:items-center"
           >
             <motion.div
@@ -227,7 +227,12 @@ export default function App() {
           />
         </div>
 
-        <div className="h-[50vh] md:hidden  md:!h-0">
+
+        
+        <div className="h-[50vh] md:hidden  md:!h-0 space-y-4">
+          <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
+            Our Products
+          </h2>
           <Cards />
         </div>
 
@@ -244,7 +249,7 @@ export default function App() {
         <div className="h-[80vh]">
           <iframe
             style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/playlist/25oVCofHAjPg8Uw0ZgIpRJ?utm_source=generator"
+            src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
             width="90%"
             height="585"
             allowFullScreen
