@@ -9,7 +9,6 @@ import PostCard from "./assets/12.png";
 import Tv from "./assets/Tv.png";
 import Glitch from "./assets/glitch.gif";
 import { useState } from "react";
-import PlayButton from './assets/PlayBtn2.png'
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { IoPlayBackSharp } from "react-icons/io5";
 import { IoPlayForwardSharp } from "react-icons/io5";
