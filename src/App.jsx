@@ -213,9 +213,9 @@ export default function App() {
 
 
         <div className="h-[50vh] md:hidden  md:!h-0 space-y-4">
-          <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
+          {/* <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
             Our Products
-          </h2>
+          </h2> */}
           <Cards />
         </div>
 
@@ -248,6 +248,8 @@ export default function App() {
           className='font-bravado text-[40px] md:text-[70px] lg:text-[120px] text-[#9e0101] text-center '>
           JOIN THE WAITLIST !
         </motion.h1>
+        <h1 className="text-center font-Milker pb-3 md:text-[20px]">Once it&apos;s gone, it&apos;s gone.</h1>
+
         <div className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
           <img
             src={Glitch}
