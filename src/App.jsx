@@ -219,7 +219,7 @@ export default function App() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
 
-          className="h-[40vh] md:hidden  md:!h-0 space-y-4 flex flex-col justify-center items-center">
+          className="h-[50vh] md:hidden  md:!h-0 space-y-4 flex flex-col justify-center items-center">
           {/* <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
             Our Products
           </h2> */}
