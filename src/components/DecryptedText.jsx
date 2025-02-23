@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, use } from 'react'
 import { motion } from 'framer-motion'
 
 /**
@@ -38,11 +38,25 @@ export default function DecryptedText({
   const [hasAnimated, setHasAnimated] = useState(false)
   const containerRef = useRef(null)
 
+
+useEffect(() => {
+  if(!isHovering){
+    setTimeout(() => {
+      setIsHovering(true)
+    },
+  3500)
+
+}}, [isHovering])
+
+
   useEffect(() => {
     let interval
     let currentIteration = 0
 
+    
+
     const getNextIndex = (revealedSet) => {
+      
       const textLength = text.length
       switch (revealDirection) {
         case 'start':
@@ -211,10 +225,7 @@ export default function DecryptedText({
           const isRevealedOrDone =
             revealedIndices.has(index) || !isScrambling || !isHovering
 
-            setTimeout(() => {
-              setIsHovering(true)
-            },
-          3500)
+            
 
           return (
             <span
@@ -228,4 +239,5 @@ export default function DecryptedText({
       </span>
     </motion.span>
   )
+  
 }

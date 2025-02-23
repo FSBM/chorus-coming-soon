@@ -240,7 +240,7 @@ export default function App() {
           <motion.iframe
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.25 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
 
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
