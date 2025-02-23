@@ -143,6 +143,7 @@ const RollingGallery = ({
                   }deg) translateZ(${radius}px)`,
               }}
             >
+              <div className="bg-black h-[250px] w-[250px] font-bravado text-white bg-opacity-30 absolute flex flex-col items-center justify-center text-8xl rounded-[0px]" > ? </div>
               <img
                 src={url}
                 alt="gallery"

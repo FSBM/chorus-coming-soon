@@ -21,6 +21,7 @@ import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
 import Sticker from "./assets/Sticker.png";
 import useWindowSize from './components/useWindowSize';
 import RollingGallery from './components/RollingGallery';
+import DecryptedText from "./components/DecryptedText";
 
 
 export default function App() {
@@ -80,9 +81,9 @@ export default function App() {
         <img
           src={Guitar}
           alt=""
-          className="absolute  top-[-150px] rotate-[16deg] md:rotate-0 md:top-[-180px] right-[-50px] md:right-0 w-[300px] md:w-[400px] lg:w-[500px]"
+          className="absolute  hidden md:block top-[-150px] rotate-[16deg] md:rotate-0 md:top-[-180px] right-[-50px] md:right-0 w-[300px] md:w-[400px] lg:w-[500px]"
         />
-        <div className="flex flex-col mx-auto justify-center items-center h-[50vh] md:h-[100vh]">
+        <div className="flex flex-col mx-auto justify-center items-center h-[60vh] md:h-[100vh]">
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -207,18 +208,23 @@ export default function App() {
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
             src={chorus}
             alt=""
-            className="md:w-[80%] w-full md:!rotate-0 !-rotate-90 min-w-[600px] hidden md:block"
+            className="md:w-[80%] md:mb-10 w-full md:!rotate-0 !-rotate-90 min-w-[600px] hidden md:block"
           />
         </div>
 
 
 
-        <div className="h-[45vh] md:hidden  md:!h-0 space-y-4 flex flex-col justify-center items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
+
+          className="h-[40vh] md:hidden  md:!h-0 space-y-4 flex flex-col justify-center items-center">
           {/* <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
             Our Products
           </h2> */}
           <RollingGallery autoplay={true} pauseOnHover={true} />
-        </div>
+        </motion.div>
 
 
 
@@ -231,7 +237,11 @@ export default function App() {
 
 
         <div className="h-[75vh] md:h-[90vh] flex col justify-center items-center">
-          <iframe
+          <motion.iframe
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.25 }}
+
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
             width="90%"
@@ -239,7 +249,7 @@ export default function App() {
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             className="mx-auto"
-          ></iframe>
+          ></motion.iframe>
         </div>
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -249,7 +259,24 @@ export default function App() {
           className='font-bravado text-[45px] md:text-[70px] lg:text-[120px] text-[#9e0101] text-center -mb-3 lg:-mb-10'>
           JOIN THE WAITLIST !
         </motion.h1>
-        <h1 className="text-center font-Milker mb-2 mb:mb-10 lg:mb-10 pb-3 md:text-[20px]">Once it&apos;s gone, it&apos;s gone.</h1>
+        {/* <h1 className="text-center font-Milker mb-2 mb:mb-10 lg:mb-10 pb-3 md:text-[20px]">Once it&apos;s gone, it&apos;s gone.</h1> */}
+
+        <motion.div>
+          <DecryptedText
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: easeInOut, delay: 0.3 }}
+
+            text="Once it's gone, it's gone."
+            speed={40}
+            maxIterations={100}
+            characters="ABCD1234!?ncas94[[venvoenwoviure843\q`^W*)@#&"
+            className="revealed"
+            parentClassName="all-letters mb-4 md:mb-[10px] lg:mb-2"
+            encryptedClassName="encrypted"
+          />
+        </motion.div>
+
 
         <div className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
           <img
