@@ -3,7 +3,7 @@ import Tshirt from "./assets/BlackShirt.png";
 import { easeInOut } from "framer-motion";
 import { motion } from "framer-motion";
 import chorus from "./assets/CHORUS.png";
-import PersonHead from "./assets/3.png";
+import PersonHead from "./assets/travis-blue.jpg";
 import CD from "./assets/11.png";
 import PostCard from "./assets/12.png";
 import Tv from "./assets/Tv.png";
@@ -17,9 +17,10 @@ import { IoShuffle } from "react-icons/io5";
 import { useRef } from "react";
 import { MdPauseCircleFilled } from "react-icons/md";
 import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
-import Cards from "./components/Cards";
+// import Cards from "./components/Cards";
 import Sticker from "./assets/Sticker.png";
 import useWindowSize from './components/useWindowSize';
+import RollingGallery from './components/RollingGallery';
 
 
 export default function App() {
@@ -81,7 +82,7 @@ export default function App() {
           alt=""
           className="absolute  top-[-150px] rotate-[16deg] md:rotate-0 md:top-[-180px] right-[-50px] md:right-0 w-[300px] md:w-[400px] lg:w-[500px]"
         />
-        <div className="flex flex-col mx-auto justify-center items-center h-[70vh] md:h-[100vh]">
+        <div className="flex flex-col mx-auto justify-center items-center h-[50vh] md:h-[100vh]">
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -146,14 +147,14 @@ export default function App() {
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="bg-black bg-opacity-45 w-[83%] left-6 top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center"
+              className="bg-black bg-opacity-45 w-[75%]  top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center"
             >
               <p className="text-6xl text-white font-bravado">POSTERS</p>
             </motion.div>
             <img
               src={PersonHead}
               alt=""
-              className="max-w-[200px] md:min-w-[98%]"
+              className="max-w-[200px] md:min-w-[75%]"
             />
           </div>
 
@@ -212,11 +213,11 @@ export default function App() {
 
 
 
-        <div className="h-[50vh] md:hidden  md:!h-0 space-y-4">
+        <div className="h-[45vh] md:hidden  md:!h-0 space-y-4 flex flex-col justify-center items-center">
           {/* <h2 className="font-Milker text-3xl text-[#ec2252] text-center">
             Our Products
           </h2> */}
-          <Cards />
+          <RollingGallery autoplay={true} pauseOnHover={true} />
         </div>
 
 
@@ -245,10 +246,10 @@ export default function App() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
 
-          className='font-bravado text-[40px] md:text-[70px] lg:text-[120px] text-[#9e0101] text-center '>
+          className='font-bravado text-[45px] md:text-[70px] lg:text-[120px] text-[#9e0101] text-center -mb-3 lg:-mb-10'>
           JOIN THE WAITLIST !
         </motion.h1>
-        <h1 className="text-center font-Milker pb-3 md:text-[20px]">Once it&apos;s gone, it&apos;s gone.</h1>
+        <h1 className="text-center font-Milker mb-2 mb:mb-10 lg:mb-10 pb-3 md:text-[20px]">Once it&apos;s gone, it&apos;s gone.</h1>
 
         <div className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
           <img
