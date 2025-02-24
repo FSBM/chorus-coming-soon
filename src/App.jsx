@@ -269,7 +269,7 @@ export default function App() {
 
             text="Once it's gone, it's gone."
             speed={40}
-            maxIterations={100}
+            maxIterations={60}
             characters="ABCD1234!?ncas94[[venvoenwoviure843\q`^W*)@#&"
             className="revealed"
             parentClassName="all-letters mb-4 md:mb-[10px] lg:mb-2"
