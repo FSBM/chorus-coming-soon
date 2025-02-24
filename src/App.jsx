@@ -22,7 +22,7 @@ import Sticker from "./assets/Sticker.png";
 import useWindowSize from './components/useWindowSize';
 import RollingGallery from './components/RollingGallery';
 import DecryptedText from "./components/DecryptedText";
-
+import CircularText from "./components/getRotationTransition";
 
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
@@ -41,6 +41,12 @@ export default function App() {
     name: "entry.1132687343",
     email: "entry.233911659",
     artist: "entry.625029594",
+  };
+  const ScrolltoSection=(id) => {
+    const element = document.getElementById("join");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -77,6 +83,14 @@ export default function App() {
   };
   return (
     <div className="customBG w-[100vw] relative overflow-x-hidden  p-[10px] md:p-[20px]">
+      <div className="fixed bottom-1 right-5 md:bottom-16 md:right-24 z-[9999] opacity-[78%]" onClick={ScrolltoSection}>
+      <CircularText
+        text="JOIN*THE*WAITLIST*"
+        onHover="speedUp"
+        spinDuration={20}
+        className="custom-class"
+      />
+      </div>
       <div className="mx-auto  bg-yellow-50 rounded-lg m-auto shadow-md shadow-gray-950 pb-3">
         <img
           src={Guitar}
@@ -120,6 +134,10 @@ export default function App() {
             bringing that experience to life with exclusive artist-inspired
             merchandise that lets you carry the magic of music everywhere you
             go.
+            <br/>
+            <br />
+            <span className='font-bold text-[15px] md:text-[19px]' >Join the waitlist for early access!<br/> The first 100 get something exclusive—you won’t want to miss this!
+            </span>
           </motion.p>
         </div>
 
@@ -251,7 +269,7 @@ export default function App() {
             className="mx-auto"
           ></motion.iframe>
         </div>
-        <motion.h1
+        <motion.h1 id="join"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
@@ -263,9 +281,9 @@ export default function App() {
 
         <motion.div>
           <DecryptedText
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: easeInOut, delay: 0.3 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: easeInOut, delay: 0.3 }}
 
             text="Once it's gone, it's gone."
             speed={40}
