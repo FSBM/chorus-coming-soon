@@ -8,16 +8,14 @@ import CD from "./assets/11.png";
 import PostCard from "./assets/12.png";
 import Tv from "./assets/Tv.png";
 import Glitch from "./assets/glitch.gif";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { IoPlayBackSharp } from "react-icons/io5";
 import { IoPlayForwardSharp } from "react-icons/io5";
 import { TiArrowLoop } from "react-icons/ti";
 import { IoShuffle } from "react-icons/io5";
-import { useRef } from "react";
 import { MdPauseCircleFilled } from "react-icons/md";
 import songFile from "./assets/Travis Scott - FE!N ft. Playboi Carti.mp3";
-// import Cards from "./components/Cards";
 import Sticker from "./assets/Sticker.png";
 import useWindowSize from './components/useWindowSize';
 import RollingGallery from './components/RollingGallery';
@@ -26,6 +24,8 @@ import CircularText from "./components/getRotationTransition";
 
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
+  const [isWaitlist, setisWaitlist] = useState(false);
+  const JoinPage = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,6 +33,33 @@ export default function App() {
   });
   const { width } = useWindowSize();
   const isMobile = width < 768;
+
+
+
+
+    
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setisWaitlist(entry.isIntersecting);
+          console.log(isWaitlist);
+        },
+        { threshold: 0.5 }
+      );
+  
+      if (JoinPage.current) {
+        observer.observe(JoinPage.current);
+      }
+  
+      return () => {
+        if (JoinPage.current) {
+          observer.unobserve(JoinPage.current);
+        }
+      };
+    }, []);
+
+
 
   const GOOGLE_FORM_ACTION_URL =
     "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQ02d-dyJxdCo1wU44faOPAMrLq3af92XTX1NxdeBfXNoRXg/formResponse";
@@ -83,14 +110,14 @@ export default function App() {
   };
   return (
     <div className="customBG w-[100vw] relative overflow-x-hidden  p-[10px] md:p-[20px]">
-      <div className="fixed bottom-1 right-5 md:bottom-16 md:right-24 z-[9999] opacity-[78%]" onClick={ScrolltoSection}>
+      {isWaitlist?null:<div className="fixed bottom-1 right-5 md:bottom-16 md:right-24 z-[9999] opacity-[78%]" onClick={ScrolltoSection}>
       <CircularText
         text="JOIN*THE*WAITLIST*"
         onHover="speedUp"
         spinDuration={20}
         className="custom-class"
       />
-      </div>
+      </div>}
       <div className="mx-auto  bg-yellow-50 rounded-lg m-auto shadow-md shadow-gray-950 pb-3">
         <img
           src={Guitar}
@@ -262,14 +289,17 @@ export default function App() {
 
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/398FVeSpgT5O4B68pVG7z5?utm_source=generator"
-            width="90%"
+            width="89%"
             height={isMobile ? "500" : "590"}
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             className="mx-auto"
           ></motion.iframe>
         </div>
-        <motion.h1 id="join"
+        <motion.h1 
+        
+        id="join"
+          ref={JoinPage}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
