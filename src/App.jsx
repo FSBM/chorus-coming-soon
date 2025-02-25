@@ -300,7 +300,7 @@ export default function App() {
         <motion.h1 
         
         id="join"
-          ref={JoinPage}
+          // ref={JoinPage}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeInOut, delay: 0.2 }}
@@ -327,7 +327,9 @@ export default function App() {
         </motion.div>
 
 
-        <div className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
+        <div 
+        ref={JoinPage}
+        className="relative flex mx-auto h-0  xl:h-auto invisible  min-w-[600px] xl:visible">
           <img
             src={Glitch}
             alt=""
@@ -410,7 +412,9 @@ export default function App() {
           <img src={Tv} alt="" className="w-[60%] z-20 mx-auto" />
         </div>
         {/* Since LG */}
-        <div className={`flex  flex-col mx-auto rounded-lg justify-center w-[95%]  md:-mt-10 ${submitted ? "" : "min-h-[55vh]"} visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG`}>
+        <div 
+        
+        className={`flex  flex-col mx-auto rounded-lg justify-center w-[95%]  md:-mt-10 ${submitted ? "" : "min-h-[55vh]"} visible  md:w-[600px] xl:hidden lg:!max-h-[0px] formBG`}>
           {submitted ? (
             <div className="px-6 pt-6 space-y-5 text-white  flex justify-center items-center  z-40 font-Milker opacity-100  noise-container xl:max-h-0">
               ✅ Your response has been recorded. Thank you!
