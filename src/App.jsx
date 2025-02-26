@@ -91,7 +91,7 @@ export default function App() {
         mode: "no-cors",
       });
 
-      setSubmitted(true); // Show success message
+      setSubmitted(true); 
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -111,7 +111,7 @@ export default function App() {
   return (
     <div className="customBG w-[100vw] relative overflow-x-hidden  p-[10px] md:p-[20px]">
       {isWaitlist?null:
-      <div className="fixed bottom-1 right-5 md:bottom-16 md:right-24 z-[9999] opacity-[78%]" onClick={ScrolltoSection}>
+      <div className="fixed bottom-1 right-5 md:bottom-16 md:right-24 z-[9999] opacity-[78%] cursor-pointer" onClick={ScrolltoSection}>
       <CircularText
         text="JOIN*THE*WAITLIST*"
         onHover="speedUp"
