@@ -130,7 +130,7 @@ export default function App() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: easeInOut, delay: 0.1 }}
-            className="oswald-400 text-xl md:text-2xl text-[#ec2252] mt-6   -mb-6"
+            className="oswald-400 text-xl md:text-2xl text-[#ec2252] mt-6  -mb-6"
           >
             Feel the Music. Wear the Moment.
           </motion.p>
