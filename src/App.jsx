@@ -187,14 +187,14 @@ export default function App() {
 
           {/* poster */}
           <div
-            className="absolute top-[40%] hidden md:block md:top-[21%] right-[180px] w-[300px] rotate-12 hover:scale-105
+            className="absolute top-[40%] hidden md:block md:top-[20.5%] right-[180px] w-[260px] rotate-12 hover:scale-105
           transition-all duration-500 ease-in-out z-50"
           >
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="bg-black bg-opacity-45 w-[75%]  top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center"
+              className="bg-black bg-opacity-45 w-[200px]  top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center"
             >
               <p className="text-6xl text-white font-bravado">POSTERS</p>
             </motion.div>
@@ -237,7 +237,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className=" bg-opacity-45 w-[80%] left-6 top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center backdrop:blur-xl"
+              className="bg-black bg-opacity-45 w-[100%]  top-[0px] h-[100%] absolute transition-all ease-in-out duration-100 flex justify-center items-center backdrop:blur-xl"
             >
               <p className="text-4xl text-white font-bravado">POST CARDS</p>
             </motion.div>
