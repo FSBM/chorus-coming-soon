@@ -376,7 +376,7 @@ export default function App() {
 
               <div>
                 <label className="block text-sm font-medium mb-1">
-                  your favrioute artist and their songs ?
+                  your favourite artist and their songs ?
                 </label>
                 <textarea
                   name="artist"
@@ -453,7 +453,7 @@ export default function App() {
 
               <div>
                 <label className="block text-sm font-medium mb-1">
-                  your favrioute artist and their songs ?
+                  your favourite artist and their songs ?
                 </label>
                 <textarea
                   name="artist"
