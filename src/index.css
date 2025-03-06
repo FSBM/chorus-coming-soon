@@ -92,4 +92,7 @@ textarea{
     background-repeat: no-repeat  !important;
     background-size: cover !important;
 }
+::-webkit-scrollbar{
+  display: none;
+}
 
